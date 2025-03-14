@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Always</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f9f5f2; text-align: center; padding: 20px; }
+        h1 { color: #444; }
+        .button-container { margin-top: 20px; }
+        .button { 
+            background-color: #ffb6c1; /* Soft pink */
+            border: none; color: white; padding: 15px 20px;
+            margin: 10px; border-radius: 8px;
+            font-size: 16px; cursor: pointer;
+            transition: 0.3s ease-in-out; 
+        }
+        .button:hover { background-color: #ff7f99; }
+        .message { display: none; margin-top: 20px; font-size: 18px; color: #444; }
+    </style>
+</head>
+<body>
+
+    <h1>For You, Always 💖</h1>
+    <p>Click on what you're feeling right now...</p>
+
+    <div class="button-container">
+        <button class="button" onclick="showMessage('message1')">For the nights when you feel like you can’t take it anymore</button>
+        <button class="button" onclick="showMessage('message2')">For when you wake up feeling exhausted</button>
+        <button class="button" onclick="showMessage('message3')">For when you feel like no one sees you</button>
+        <button class="button" onclick="showMessage('message4')">For when you need a reminder that you matter</button>
+    </div>
+
+    <p id="message1" class="message">You are stronger than you feel right now. I see you. I love you. And I am always here.</p>
+    <p id="message2" class="message">Close your eyes, take a deep breath. Even if today is heavy, you don’t have to carry it alone.</p>
+    <p id="message3" class="message">You are not invisible to me. I see the battles you fight, the love you give, the pain you hide. You matter.</p>
+    <p id="message4" class="message">You are more than this moment. You are light, love, and strength. And I will never let you forget that.</p>
+
+    <script>
+        function showMessage(id) {
+            document.querySelectorAll('.message').forEach(msg => msg.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
