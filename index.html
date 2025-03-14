@@ -3,26 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You, Always</title>
+    <title>For You, Always 💖</title>
+    
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f9f5f2; text-align: center; padding: 20px; }
-        h1 { color: #444; }
-        .button-container { margin-top: 20px; }
-        .button { 
-            background-color: #ffb6c1; /* Soft pink */
-            border: none; color: white; padding: 15px 20px;
-            margin: 10px; border-radius: 8px;
-            font-size: 16px; cursor: pointer;
-            transition: 0.3s ease-in-out; 
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
         }
-        .button:hover { background-color: #ff7f99; }
-        .message { display: none; margin-top: 20px; font-size: 18px; color: #444; }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 400;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .message {
+            display: none;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            max-width: 80%;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                height: auto;
+            }
+
+            .button-container {
+                width: 100%;
+            }
+
+            .message {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
 
     <h1>For You, Always 💖</h1>
-    <p>Click on what you're feeling right now...</p>
+    <p>Whenever you need a reminder, click below...</p>
 
     <div class="button-container">
         <button class="button" onclick="showMessage('message1')">For the nights when you feel like you can’t take it anymore</button>
@@ -31,15 +110,16 @@
         <button class="button" onclick="showMessage('message4')">For when you need a reminder that you matter</button>
     </div>
 
-    <p id="message1" class="message">You are stronger than you feel right now. I see you. I love you. And I am always here.</p>
-    <p id="message2" class="message">Close your eyes, take a deep breath. Even if today is heavy, you don’t have to carry it alone.</p>
-    <p id="message3" class="message">You are not invisible to me. I see the battles you fight, the love you give, the pain you hide. You matter.</p>
-    <p id="message4" class="message">You are more than this moment. You are light, love, and strength. And I will never let you forget that.</p>
+    <div id="message1" class="message">💛 You are stronger than you feel right now. I see you. I love you. And I am always here.</div>
+    <div id="message2" class="message">🌿 Close your eyes, take a deep breath. Even if today is heavy, you don’t have to carry it alone.</div>
+    <div id="message3" class="message">✨ You are not invisible to me. I see the battles you fight, the love you give, the pain you hide. You matter.</div>
+    <div id="message4" class="message">🌸 You are more than this moment. You are light, love, and strength. And I will never let you forget that.</div>
 
     <script>
         function showMessage(id) {
             document.querySelectorAll('.message').forEach(msg => msg.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
+            const message = document.getElementById(id);
+            message.style.display = 'block';
         }
     </script>
 
